@@ -2,12 +2,13 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { TestComponent } from './test.component';
 
 @Directive({
-  selector: '[appSample]',
+  selector: 'app-test[appSample]',
 })
 export class SampleDirective {
   component: TestComponent;
 
   constructor(private test: TestComponent) {
+    console.log('sample');
     this.component = test;
     this.component.username = 'overriden text';
   }
